@@ -6,7 +6,7 @@ namespace Chatbot_04_4
         static void Main()
         {
             Dictionary<string, CommonInputHandler> inputHandlers = new Dictionary<string, CommonInputHandler>();
-            inputHandlers.Add("Names", new NameReaderIH(new List<string>
+            inputHandlers.Add("Name", new NameReaderIH(new List<string>
             {
                 ""
             }, "What is your name?"));
@@ -14,12 +14,14 @@ namespace Chatbot_04_4
             new string[]
             {
                 "I like them too!",
+                "That's cool $, I also like cats!",
                 "I love animals!",
                 "They're so fluffy and cute!"
             },
             new string[]
             {
                 "I guess they're not for everyone",
+                "Ok $, I guess they're just not for you",
                 "I like them myself",
                 "That's a shame"
             }, true, "Do you like cats?"));
@@ -27,16 +29,19 @@ namespace Chatbot_04_4
             {
                 "They're quite cute, aren't they!",
                 "Some dogs are scary",
-                "My family's always wanted a dog, but digital dogs have a strong byte"
+                "My family's always wanted a dog, but digital dogs have a strong byte",
+                "If you had a dog, what would you name it $?",
             },
             new string[]
             {
                 "Dog's aren't my favourite either",
+                "Really $? Most people like them",
                 "I get it, some people just don't like some animals",
                 "That's interesting"
             }, true, "Then what about dogs?"));
             while (true)
             {
+                Console.Clear();
                 List<string> keys = inputHandlers.keys.ToList();
                 keys.RemoveAt(0);
                 keys.Add("New");
@@ -72,53 +77,42 @@ namespace Chatbot_04_4
                     {
                         List<string> reps = inputHandlers[selected].pos_replies;
                         reps.Add("New");
-                        Menu men = new Menu(inputHandlers[selected].pos_replies.ToArray(), "Positive Replies");
-                        int sel_reply = men.interact_for_index();
+                        Menu men = new Menu(reps, "Positive Replies");
+                        int sel_reply = men.interact_for_ind
+            foreach (CommonInputHandler IH in inputHandlers)
+                Console.WriteLine(IH.reply(IH.field == "yes"));ex();
                         Console.Clear();
-                        Console.WriteLine(inputHandlers[selected].pos_replies[sel_reply]);
-                        inputHandlers[selected].pos_replies[sel_reply] = Utils.non_nullable(Console.ReadLine());
+                        if (reps[sel_reply] == "New")
+                            inputHandlers[selected].pos_replies.Add(Utils.non_nullable(Console.ReadLine()));
+                        else
+                        {
+                            Console.WriteLine(inputHandlers[selected].pos_replies[sel_reply]);
+                            inputHandlers[selected].pos_replies[sel_reply] = Utils.non_nullable(Console.ReadLine());
+                            if (inputHandlers[selected].pos_replies[sel_reply] == "")
+                                inputHandlers[selected].pos_replies.RemoveAt(sel_reply);
+                        }
                     }
                     else if (i_selected == "Negative Replies")
                     {
-                        Menu men = new Menu(inputHandlers[selected].neg_replies.ToArray(), "Negative Replies");
+                        List<string> reps = inputHandlers[selected].neg_replies;
+                        reps.Add("New");
+                        Menu men = new Menu(reps.ToArray(), "Negative Replies");
                         int sel_reply = men.interact_for_index();
                         Console.Clear();
-                        Console.WriteLine(inputHandlers[selected].neg_replies[sel_reply]);
-                        inputHandlers[selected].neg_replies[sel_reply] = Utils.non_nullable(Console.ReadLine());
+                        if (reps[sel_reply] == "New")
+                            inputHandlers[selected].neg_replies.Add(Utils.non_nullable(Console.ReadLine()));
+                        else
+                        {
+                            Console.WriteLine(inputHandlers[selected].neg_replies[sel_reply]);
+                            inputHandlers[selected].neg_replies[sel_reply] = Utils.non_nullable(Console.ReadLine());
+                            if (inputHandlers[selected].neg_replies[sel_reply] == "")
+                                inputHandlers[selected].neg_replies.RemoveAt(sel_reply);
+                        }
                     }
                 }
             }
-            while (will_make.field == "yes")
-            {
-                Console.WriteLine("What is your question?");
-                string q = Utils.non_nullable(Console.ReadLine());
-                Console.WriteLine("What are your positive replies?");
-                Console.WriteLine("Say END to finish replies");
-                string _in = "";
-                List<string> pos_replies = new List<string>();
-                while (true)
-                {
-                    _in = Utils.non_nullable(Console.ReadLine());
-                    if (_in == "END")
-                        break;
-                    pos_replies.Add(_in);
-                }
-                Console.WriteLine("Same thing, but for negative replies");
-                _in = "";
-                List<string> neg_replies = new List<string>();
-                while (true)
-                {
-                    _in = Utils.non_nullable(Console.ReadLine());
-                    if (_in == "END")
-                        break;
-                    pos_replies.Add(_in);
-                }
-                Console.WriteLine("What is an easy, one word label for this question?");
-                bot.inputHandlers.Add(Utils.non_nullable(Console.ReadLine()), new BooleanReaderIH(pos_replies, neg_replies, true, q));
-                will_make.field = null;
-                will_make.question = "Would you like to make another?";
-            }
-            Console.WriteLine("Thanks for using!");
+            BotInstance bot = new BotInstance(inputHandlers);
+            bot.Converse();
         }
     }
 }

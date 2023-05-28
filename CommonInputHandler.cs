@@ -32,7 +32,8 @@ namespace Chatbot_04_4
             }
         }
         public virtual string reply() => Utils.get_random(replies);
-        public virtual string reply(bool was_yes) => "";
+        public virtual string reply(bool was_yes, string user_name) => "";
+        public virtual string reply(string user_name) => "";
         public List<string> replies;
         public List<string> get_words_type(string type) => input_words.Where((word) => word_classifier.is_type(word, type)).ToList();
         public bool first_word(string word, List<List<string>> phrase)

@@ -31,9 +31,17 @@ namespace Chatbot_04_4
                     return is_inverted() ? true : false;
             throw new Exception();
         }
-        public override string reply(bool was_yes)
+        public override string reply(bool was_yes, string user_name)
         {
-            return was_yes ? Utils.get_random(pos_replies) : Utils.get_random(neg_replies);
+            string sel = was_yes ? Utils.get_random(pos_replies) : Utils.get_random(neg_replies);
+            List<string> sels = sel.Split('$');
+            if (sels.Count == 1)
+                return sel;
+            if (sels.Count > 2)
+                throw new Exception();
+            for (int i = 0; i < sels.Count; i++)
+                sels[i].Remove('$');
+            return sels[0] + user_name + sels[1];
         }
 
         public override string find_field()

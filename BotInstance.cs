@@ -9,8 +9,9 @@ namespace Chatbot_04_4
     internal class BotInstance
     {
         public List<CommonInputHandler> inputHandlers = new List<CommonInputHandler>();
-        public BotInstance()
+        public BotInstance(List<CommonInputHandler> inputHandlers)
         {
+            this.inputHandlers = inputHandlers;
             id = hash_time(DateTime.Now.ToString());
             Converse();
         }
@@ -26,8 +27,10 @@ namespace Chatbot_04_4
         public void Converse()
         {
             Console.WriteLine($"Hello! I am ChatBot {id}");
+            user_name = inputHandlers[0].field;
+            inputHandlers.RemoveAt(0);
             foreach (CommonInputHandler IH in inputHandlers)
-                Console.WriteLine(IH.reply(IH.field == "yes"));
+                Console.WriteLine(IH.reply(IH.field == "yes", user_name));
         }
     }
 }

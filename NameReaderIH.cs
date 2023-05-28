@@ -8,6 +8,10 @@ namespace Chatbot_04_4
 {
     internal class NameReaderIH : CommonInputHandler
     {
+        public override string reply(string user_name)
+        {
+            return $"Hello {user_name}! It's nice to meet you!";
+        }
         private bool is_valid_name(string name)
         {
             if (name[0] > 'Z')
