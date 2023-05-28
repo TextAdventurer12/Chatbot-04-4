@@ -1,0 +1,40 @@
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/Chatbot 04-4.exe
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/Chatbot 04-4.deps.json
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/Chatbot 04-4.runtimeconfig.json
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/Chatbot 04-4.dll
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/Chatbot 04-4.pdb
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.csproj.AssemblyReference.cache
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.GeneratedMSBuildEditorConfig.editorconfig
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.AssemblyInfoInputs.cache
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.AssemblyInfo.cs
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.csproj.CoreCompileInputs.cache
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.dll
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/refint/Chatbot 04-4.dll
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.pdb
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.genruntimeconfig.cache
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/ref/Chatbot 04-4.dll
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/RestSharp.dll
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/System.Text.Encodings.Web.dll
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/System.Text.Json.dll
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
+K:/Document/11IA/C# Projects/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.csproj.CopyComplete
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/Chatbot 04-4
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/Chatbot 04-4.deps.json
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/Chatbot 04-4.runtimeconfig.json
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/Chatbot 04-4.dll
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/Chatbot 04-4.pdb
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/RestSharp.dll
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/System.Text.Encodings.Web.dll
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/System.Text.Json.dll
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.csproj.AssemblyReference.cache
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.GeneratedMSBuildEditorConfig.editorconfig
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.AssemblyInfoInputs.cache
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.AssemblyInfo.cs
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.csproj.CoreCompileInputs.cache
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.csproj.CopyComplete
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.dll
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/refint/Chatbot 04-4.dll
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.pdb
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/Chatbot 04-4.genruntimeconfig.cache
+/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/obj/Debug/net6.0/ref/Chatbot 04-4.dll

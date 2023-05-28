@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "4JV2gbjzkCvch8jlpDVPi6ysYNq4rU3RshYWLp9TcmT+HKlS+n3uWL5/R6eXNEHKR/O4imUHZqjBukhzmF7lvA==",
+  "success": true,
+  "projectFilePath": "/Users/danielthirtle/Downloads/Chatbot 04-4/Chatbot 04-4/Chatbot 04-4.csproj",
+  "expectedPackageFiles": [
+    "/Users/danielthirtle/.nuget/packages/restsharp/110.1.0/restsharp.110.1.0.nupkg.sha512",
+    "/Users/danielthirtle/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/Users/danielthirtle/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
+    "/Users/danielthirtle/.nuget/packages/system.text.json/7.0.2/system.text.json.7.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
