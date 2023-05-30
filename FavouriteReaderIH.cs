@@ -27,5 +27,14 @@ namespace Chatbot_04_4
                 sels[i].Remove('$');
             return sels[0] + user_name + sels[1];
         }
+        public override string find_field()
+        {
+            Menu selector = new Menu(options);
+            return selector.interact();
+            /*foreach(string s in options)
+                if (input_words.Contains(s))
+                    return s;
+            return "else";*/
+        }
     }
 }

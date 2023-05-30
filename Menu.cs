@@ -11,7 +11,7 @@ namespace Chatbot_04_4
         public string? title { get; set; }
         public List<string> items { get; set; }
         private int index;
-        public Menu(string[] items, string? title=null)
+        public Menu(IEnumerable<string> items, string? title=null)
         {
             this.items = items.ToList();
             this.title = title;

@@ -25,7 +25,6 @@ namespace Chatbot_04_4
         public override string find_field()
         {
             Console.WriteLine(question);
-            user_input = Utils.non_nullable(Console.ReadLine());
             return get_name();
         }
         public string get_name()

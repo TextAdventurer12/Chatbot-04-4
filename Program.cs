@@ -39,78 +39,23 @@ namespace Chatbot_04_4
                 "I get it, some people just don't like some animals",
                 "That's interesting"
             }, true, "Then what about dogs?"));
-            while (true)
+            inputHandlers.Add("Animal", new FavouriteReaderIH(new string[]
             {
-                Console.Clear();
-                List<string> keys = inputHandlers.keys.ToList();
-                keys.RemoveAt(0);
-                keys.Add("New");
-                keys.Add("Complete");
-                Menu bot_details = new Menu(
-                    keys,
-                    "Questions"
-                );
-                string selected = bot_details.interact();
-                if (selected = "New")
-                {
-                    Console.WriteLine("What is the name for this question?");
-                    inputHandlers.Add(Utils.non_nullable(Console.ReadLine()), new BooleanReaderIH(new string[], new string[], true, "Q"));
-                }
-                else if (selected = "Complete")
-                    break;
-                else
-                {
-                    Menu instant = new Menu(new string[]
-                    {
-                        "Question",
-                        "Positive Replies",
-                        "Negative Replies"
-                    }, selected);
-                    string i_selected = instant.interact();
-                    if (i_selected == "Question")
-                    {
-                        Console.Clear();
-                        Console.WriteLine(inputHandlers[selected].question);
-                        inputHandlers[selected].question = Utils.non_nullable(Console.ReadLine());
-                    }
-                    else if (i_selected == "Positive Replies")
-                    {
-                        List<string> reps = inputHandlers[selected].pos_replies;
-                        reps.Add("New");
-                        Menu men = new Menu(reps, "Positive Replies");
-                        int sel_reply = men.interact_for_ind
-            foreach (CommonInputHandler IH in inputHandlers)
-                Console.WriteLine(IH.reply(IH.field == "yes"));ex();
-                        Console.Clear();
-                        if (reps[sel_reply] == "New")
-                            inputHandlers[selected].pos_replies.Add(Utils.non_nullable(Console.ReadLine()));
-                        else
-                        {
-                            Console.WriteLine(inputHandlers[selected].pos_replies[sel_reply]);
-                            inputHandlers[selected].pos_replies[sel_reply] = Utils.non_nullable(Console.ReadLine());
-                            if (inputHandlers[selected].pos_replies[sel_reply] == "")
-                                inputHandlers[selected].pos_replies.RemoveAt(sel_reply);
-                        }
-                    }
-                    else if (i_selected == "Negative Replies")
-                    {
-                        List<string> reps = inputHandlers[selected].neg_replies;
-                        reps.Add("New");
-                        Menu men = new Menu(reps.ToArray(), "Negative Replies");
-                        int sel_reply = men.interact_for_index();
-                        Console.Clear();
-                        if (reps[sel_reply] == "New")
-                            inputHandlers[selected].neg_replies.Add(Utils.non_nullable(Console.ReadLine()));
-                        else
-                        {
-                            Console.WriteLine(inputHandlers[selected].neg_replies[sel_reply]);
-                            inputHandlers[selected].neg_replies[sel_reply] = Utils.non_nullable(Console.ReadLine());
-                            if (inputHandlers[selected].neg_replies[sel_reply] == "")
-                                inputHandlers[selected].neg_replies.RemoveAt(sel_reply);
-                        }
-                    }
-                }
-            }
+                "Cats",
+                "Dogs",
+                "Rabbits",
+                "Lions",
+                "Dinosaurs",
+                "Lizards"
+            }, new string[][]
+            {
+                {"I like cats too!", "Wow $! Cat's are also my favourite"},
+                {"They are man's best friend", "I'm not a fan myself"},
+                {"I also like bunny ears :)", "They have fluffy tails"},
+                {"I think they're big and strong", "roar :O"},
+                {"When I was a kid I worshipped dinosaurs, I always wanted to be a dinosaur. I wanted to be a Tyrannosaurus Rex more than anything in the world. I made my arms short and I roamed the backyard, I chased the neighborhood cats, I growled and I roared. Everybody knew me and was afraid of me.", "The T-Rex is my favourite dinosaur"},
+                {"Lizards are cute, they look so warm and comfy on rocks", "They are cool"}
+            }));
             BotInstance bot = new BotInstance(inputHandlers);
             bot.Converse();
         }

@@ -8,7 +8,6 @@ namespace Chatbot_04_4
 {
     internal class CommonInputHandler
     {
-        public double d_opinion;
         public string? _field;
         public string field
         {
@@ -25,10 +24,14 @@ namespace Chatbot_04_4
         }
         public string question;
         private string? _user_input { get; set; }
-        public string user_input { get => _user_input;  protected set
+        public string user_input { get {
+            if (_user_input == null)
+                _user_input = Utils.non_nullable(Console.ReadLine()).ToLower();
+            return _user_input;
+        }  protected set
             {
-                input_words = value.Split(' ').ToList();
-                _user_input = value;
+                _user_input = value.ToLower();
+                input_words = _user_input.Split(' ').ToList();
             }
         }
         public virtual string reply() => Utils.get_random(replies);
@@ -49,13 +52,11 @@ namespace Chatbot_04_4
         public CommonInputHandler(List<string> replies, string question)
         {
             this.question = question;
-            d_opinion = 0;
             this.replies = replies;
         }
         public CommonInputHandler(string question)
         {
             this.question = question;
-            d_opinion = 0;
             this.replies = new List<string>();
         }
     }
