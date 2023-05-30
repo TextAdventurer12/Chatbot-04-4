@@ -45,14 +45,12 @@ namespace Chatbot_04_4
             catch
             {
                 Console.WriteLine("Please start your name with a capital letter");
-                d_opinion -= 0.1;
                 user_input = Utils.non_nullable(Console.ReadLine());
                 return get_name();
             }
             if (names.Count > 1)
             {
                 Console.WriteLine("Sorry, please don't use too many words that start with capital letters");
-                d_opinion -= 0.1;
                 user_input = Utils.non_nullable(Console.ReadLine());
                 return get_name();
             }

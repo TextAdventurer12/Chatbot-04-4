@@ -34,13 +34,14 @@ namespace Chatbot_04_4
         public override string reply(bool was_yes, string user_name)
         {
             string sel = was_yes ? Utils.get_random(pos_replies) : Utils.get_random(neg_replies);
-            List<string> sels = sel.Split('$');
+            List<string> sels = sel.Split('$').ToList();
             if (sels.Count == 1)
                 return sel;
             if (sels.Count > 2)
                 throw new Exception();
             for (int i = 0; i < sels.Count; i++)
-                sels[i].Remove('$');
+                if (sels[i].Contains('$'))
+                    sels[i].Remove('$');
             return sels[0] + user_name + sels[1];
         }
 

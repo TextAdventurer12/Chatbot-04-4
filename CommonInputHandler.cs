@@ -26,11 +26,11 @@ namespace Chatbot_04_4
         private string? _user_input { get; set; }
         public string user_input { get {
             if (_user_input == null)
-                _user_input = Utils.non_nullable(Console.ReadLine()).ToLower();
+                _user_input = Utils.non_nullable(Console.ReadLine());
             return _user_input;
         }  protected set
             {
-                _user_input = value.ToLower();
+                _user_input = value;
                 input_words = _user_input.Split(' ').ToList();
             }
         }

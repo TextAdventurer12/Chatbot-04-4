@@ -49,14 +49,14 @@ namespace Chatbot_04_4
                 "Lizards"
             }, new string[][]
             {
-                {"I like cats too!", "Wow $! Cat's are also my favourite"},
-                {"They are man's best friend", "I'm not a fan myself"},
-                {"I also like bunny ears :)", "They have fluffy tails"},
-                {"I think they're big and strong", "roar :O"},
-                {"When I was a kid I worshipped dinosaurs, I always wanted to be a dinosaur. I wanted to be a Tyrannosaurus Rex more than anything in the world. I made my arms short and I roamed the backyard, I chased the neighborhood cats, I growled and I roared. Everybody knew me and was afraid of me.", "The T-Rex is my favourite dinosaur"},
-                {"Lizards are cute, they look so warm and comfy on rocks", "They are cool"}
-            }));
-            BotInstance bot = new BotInstance(inputHandlers);
+                new string[] {"I like cats too!", "Wow $! Cat's are also my favourite"},
+                new string[] {"They are man's best friend", "I'm not a fan myself"},
+                new string[] {"I also like bunny ears :)", "They have fluffy tails"},
+                new string[] {"I think they're big and strong", "roar :O"},
+                new string[] {"When I was a kid I worshipped dinosaurs, I always wanted to be a dinosaur. I wanted to be a Tyrannosaurus Rex more than anything in the world. I made my arms short and I roamed the backyard, I chased the neighborhood cats, I growled and I roared. Everybody knew me and was afraid of me.", "The T-Rex is my favourite dinosaur"},
+                new string[] {"Lizards are cute, they look so warm and comfy on rocks", "They are cool"}
+            }, "Which of these is your favourite?"));
+            BotInstance bot = new BotInstance(inputHandlers.Values.ToList());
             bot.Converse();
         }
     }
