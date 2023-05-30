@@ -9,7 +9,8 @@ namespace Chatbot_04_4
     internal class BotInstance
     {
         public List<CommonInputHandler> inputHandlers = new List<CommonInputHandler>();
-        public BotInstance(List<CommonInputHandler> inputHandlers, ConsoleColor text_col, ConsoleColor user_col)
+        public NameReaderIH nameGetter = new NameReaderIH();
+        public BotInstance(NameReaderIH nameGetter, List<CommonInputHandler> inputHandlers)
         {
             this.inputHandlers = inputHandlers;
             id = hash_time(DateTime.Now.ToString());
@@ -27,8 +28,7 @@ namespace Chatbot_04_4
         public void Converse()
         {
             Visor.WriteLine($"Hello! I am ChatBot {id}");
-            user_name = inputHandlers[0].field;
-            inputHandlers.RemoveAt(0);
+            user_name = nameGetter.field;
             foreach (CommonInputHandler IH in inputHandlers)
             {
                 Visor.ForegroundColor = text_col;

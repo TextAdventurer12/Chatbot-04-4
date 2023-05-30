@@ -6,10 +6,10 @@ namespace Chatbot_04_4
         static void Main()
         {
             Dictionary<string, CommonInputHandler> inputHandlers = new Dictionary<string, CommonInputHandler>();
-            inputHandlers.Add("Name", new NameReaderIH(new List<string>
+            NameReaderIH namer = new NameReaderIH(new List<string>
             {
                 ""
-            }, "What is your name?"));
+            }, "What is your name?");
             inputHandlers.Add("Cat", new BooleanReaderIH(
             new string[]
             {
@@ -56,7 +56,7 @@ namespace Chatbot_04_4
                 new string[] {"When I was a kid I worshipped dinosaurs, I always wanted to be a dinosaur. I wanted to be a Tyrannosaurus Rex more than anything in the world. I made my arms short and I roamed the backyard, I chased the neighborhood cats, I growled and I roared. Everybody knew me and was afraid of me.", "The T-Rex is my favourite dinosaur"},
                 new string[] {"Lizards are cute, they look so warm and comfy on rocks", "They are cool"}
             }, "Which of these is your favourite?"));
-            BotInstance bot = new BotInstance(inputHandlers.Values.ToList());
+            BotInstance bot = new BotInstance(namer, inputHandlers.Values.ToList());
             bot.Converse();
         }
     }
