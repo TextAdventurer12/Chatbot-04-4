@@ -47,8 +47,8 @@ namespace Chatbot_04_4
 
         public override string find_field()
         {
-            Console.WriteLine(question);
-            user_input = Utils.non_nullable(Console.ReadLine());
+            Visor.WriteLine(question);
+            user_input = Visor.ReadLine();
             string feld;
             try
             {
@@ -58,7 +58,7 @@ namespace Chatbot_04_4
             {
                 if (certainty)
                 {
-                    Console.WriteLine("Sorry, I'm not sure what you mean, please say that again");
+                    Visor.WriteLine("Sorry, I'm not sure what you mean, please say that again");
                     return find_field();
                 }
                 feld = "?";

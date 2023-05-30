@@ -24,11 +24,9 @@ namespace Chatbot_04_4
         }
         int id;
         string user_name;
-        ConsoleColor text_col;
-        ConsoleColor user_col;
         public void Converse()
         {
-            Console.WriteLine($"Hello! I am ChatBot {id}");
+            Visor.WriteLine($"Hello! I am ChatBot {id}");
             user_name = inputHandlers[0].field;
             inputHandlers.RemoveAt(0);
             foreach (CommonInputHandler IH in inputHandlers)

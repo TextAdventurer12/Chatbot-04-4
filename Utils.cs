@@ -22,10 +22,10 @@ namespace Chatbot_04_4
         public static void loading_screen(ref Task<RestSharp.RestResponse> request)
         {
             Console.Clear();
-            Console.Write("Loading");
+            Visor.Write("Loading");
             for (int i = 0; i < 3; i++)
             {
-                Console.Write(".");
+                Visor.Write(".");
                 System.Threading.Thread.Sleep(100);
             }
             if (!request.IsCompleted)

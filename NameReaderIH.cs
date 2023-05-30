@@ -24,7 +24,7 @@ namespace Chatbot_04_4
         }
         public override string find_field()
         {
-            Console.WriteLine(question);
+            Visor.WriteLine(question);
             return get_name();
         }
         public string get_name()
@@ -44,14 +44,14 @@ namespace Chatbot_04_4
             }
             catch
             {
-                Console.WriteLine("Please start your name with a capital letter");
-                user_input = Utils.non_nullable(Console.ReadLine());
+                Visor.WriteLine("Please start your name with a capital letter");
+                user_input = Visor.ReadLine();
                 return get_name();
             }
             if (names.Count > 1)
             {
-                Console.WriteLine("Sorry, please don't use too many words that start with capital letters");
-                user_input = Utils.non_nullable(Console.ReadLine());
+                Visor.WriteLine("Sorry, please don't use too many words that start with capital letters");
+                user_input = Visor.ReadLine();
                 return get_name();
             }
             return names[0];

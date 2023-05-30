@@ -24,7 +24,7 @@ namespace Chatbot_04_4
             foreach (string word in words)
                 responses.Add(get_type(word));
             while (responses.Where((task) => !task.IsCompleted).ToList().Count > 0)
-                Console.Write(".");
+                Visor.Write(".");
             foreach (Task<RestResponse> task in responses)
             {
                 string[] types = read_from_JSON(task.Result.Content);

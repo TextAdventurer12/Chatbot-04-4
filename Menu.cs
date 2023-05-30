@@ -25,22 +25,15 @@ namespace Chatbot_04_4
             while (true)
             {
                 Console.SetCursorPosition(0, 0);
-                Console.ForegroundColor = ConsoleColor.White;
                 Console.BackgroundColor = ConsoleColor.Black;
                 if (title != null)
                     Console.WriteLine(title);
                 for (int i = 0; i < items.Count; i++)
                 {
                     if (i == index)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Black;
                         Console.BackgroundColor = ConsoleColor.White;
-                    }
                     else
-                    {
-                        Console.ForegroundColor = ConsoleColor.White;
                         Console.BackgroundColor = ConsoleColor.Black;
-                    }
                     Console.WriteLine(items[i]);
                 }
                 ConsoleKeyInfo key = Console.ReadKey();

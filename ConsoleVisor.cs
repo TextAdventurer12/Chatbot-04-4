@@ -36,7 +36,7 @@ namespace Chatbot_04_4
         public string ReadLine()
         {
             Console.ForegroundColor = UsrColor;
-            return Console.ReadLine();
+            return Utils.non_nullable(Console.ReadLine());
         }
     }
     public static ConsoleVisor Visor = new ConsoleVisor(ConsoleColor.Red, ConsoleColor.Blue);
