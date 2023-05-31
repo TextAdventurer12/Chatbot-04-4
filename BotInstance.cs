@@ -29,10 +29,11 @@ namespace Chatbot_04_4
         {
             Visor.WriteLine($"Hello! I am ChatBot {id}");
             user_name = nameGetter.field;
-            foreach (CommonInputHandler IH in inputHandlers)
+            while (inputHandlers.Count > 0)
             {
-                Visor.ForegroundColor = text_col;
-                Visor.WriteLine(IH.reply(IH.field == "yes", user_name));
+                int ind = Utils.r.Next(0, inputHandlers.Count);
+                Console.WriteLine(inputHandlers.values[ind].reply(inputHandlers.values[ind].field == "yes", user_name));
+                inputHandlers.RemoveAt(ind);
             }
         }
     }

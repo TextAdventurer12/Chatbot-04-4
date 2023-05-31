@@ -9,7 +9,7 @@ namespace Chatbot_04_4
     internal class CommonInputHandler
     {
         public string? _field;
-        public string field
+        public virtual string field
         {
             get
             {
@@ -58,6 +58,10 @@ namespace Chatbot_04_4
         {
             this.question = question;
             this.replies = new List<string>();
+        }
+        public CommonInputHandler()
+        {
+            
         }
     }
 }

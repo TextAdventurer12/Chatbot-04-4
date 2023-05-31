@@ -75,5 +75,15 @@ namespace Chatbot_04_4
             foreach (string s in neg_replies)
                 this.neg_replies.Add(new string(s));
         }
+        public BooleanReaderIH(IEnumerable<string> pos_replies, IEnumerable<string> neg_replies, string question) : base(question)
+        {
+            this.certainty = true;
+            this.pos_replies = new List<string>();
+            foreach (string s in pos_replies)
+                this.pos_replies.Add(new string(s));
+            this.neg_replies = new List<string>();
+            foreach (string s in neg_replies)
+                this.neg_replies.Add(new string(s));
+        }
     }
 }

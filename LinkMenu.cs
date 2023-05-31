@@ -25,6 +25,24 @@ namespace Chatbot_04_4
             {
                 Console.SetCursorPosition(0, 0);
                 Console.BackgroundColor = ConsoleColor.Black;
+                if (title != null)
+                    Console.WriteLine(title);
+                for (int i = 0; i < r_list.Count; i++)
+                {
+                    if (i == index)
+                        Console.BackgroundColor = ConsoleColor.White;
+                    else
+                        Console.BackgroundColor = ConsoleColor.Black;
+                    Console.WriteLine(r_list[i]);
+                }
+                ConsoleKeyInfo key = Console.ReadKey();
+                if (key.Key == ConsoleKey.W || key.Key == ConsoleKey.UpArrow)
+                    index--;
+                if (key.Key == ConsoleKey.S || key.Key == ConsoleKey.DownArrow)
+                    index++;
+                if (key.Key == ConsoleKey.Enter)
+                    return index;
+                index = index < 0 ? r_list.Count - 1 : index % r_list.Count;
             }
         }
     }
