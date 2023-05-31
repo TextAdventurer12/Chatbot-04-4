@@ -21,6 +21,7 @@ namespace Chatbot_04_4
         // WARNING: REMOVES STDOUT, recommended to put a wait before invoking the function
         public int interact_for_index()
         {
+            System.Threading.Thread.Sleep(1000);
             Console.Clear();
             while (true)
             {
