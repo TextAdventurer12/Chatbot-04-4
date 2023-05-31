@@ -122,7 +122,11 @@ namespace Chatbot_04_4
                     "Frappuccino"
                 }, new string[][]
                 {
-                    new string[] {"Coffee's a little too bitter for me"}
+                    new string[] {"Coffee's a little too bitter for me", "It can really wake me up in the morning"},
+                    new string[] {"I love tea", "It's quite nice to have a cup of tea at the end of the day, isn't it"},
+                    new string[] {"I like sweet things", "It's lovely with marshmallows"},
+                    new string[] {"That's quite unique", "It is nice to have a bit of sweetness"},
+                    new string[] {"They're a touch too sweet for me"}
                 }, "What's your favourite?")
             }));
             BotInstance bot = new BotInstance(namer, inputHandlers.Values.ToList());
