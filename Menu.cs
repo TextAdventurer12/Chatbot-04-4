@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Chatbot_04_4
 {
+    // Interactable menu that is used to identify a selected option from the set of items
+    // Invoke the constructor with a list of strings for each item, and an optional title
     internal class Menu
     {
         public string? title { get; set; }

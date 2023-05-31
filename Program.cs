@@ -5,7 +5,8 @@ namespace Chatbot_04_4
     {
         static void Main()
         {
-            List<CommonInputHandler> inputHandlers = 
+            // Set of questions to be asked
+            List<CommonIH> inputHandlers = 
             {
             new BooleanReaderIH(
                 new string[]
@@ -53,7 +54,7 @@ namespace Chatbot_04_4
                     new string[] {"When I was a kid I worshipped dinosaurs, I always wanted to be a dinosaur. I wanted to be a Tyrannosaurus Rex more than anything in the world. I made my arms short and I roamed the backyard, I chased the neighborhood cats, I growled and I roared. Everybody knew me and was afraid of me.", "The T-Rex is my favourite dinosaur"},
                     new string[] {"Lizards are cute, they look so warm and comfy on rocks", "They are cool"}
                 }, "Which of these is your favourite?"),
-            new ChainReadersIH(new CommonInputHandler[]
+            new ChainReaders(new CommonIH[]
             {
                 new BooleanReaderIH(new string[]
                 {
@@ -90,7 +91,7 @@ namespace Chatbot_04_4
                     new string[] {"Are you an old man?", "Quite refined I see", "I've never played myself, but it seems fun"}
                 }, "Which of these is your favourite?")
             }),
-            new ChainReadersIH(new CommonInputHandler[]
+            new ChainReaders(new CommonIH[]
             {
                 new BooleanReaderIH(new string[]
                 {
@@ -127,10 +128,9 @@ namespace Chatbot_04_4
                 }, "What's your favourite?")
             })
             };
-            NameReaderIH namer = new NameReaderIH(new List<string>
-            {
-                ""
-            }, "What is your name?");
+            // name getter property
+            NameReaderIH namer = new NameReaderIH("What is your name?");
+            // establish and invoke the chatbot with necessary sets
             BotInstance bot = new BotInstance(namer, inputHandlers.Values.ToList());
             bot.Converse();
         }

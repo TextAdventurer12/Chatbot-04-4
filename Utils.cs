@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chatbot_04_4
 {
+    // Basic utility functions
     internal class Utils
     {
         public static Random r = new Random();
@@ -18,19 +19,6 @@ namespace Chatbot_04_4
             if (msg == null)
                 throw new Exception("Hella Cringe!");
             return msg;
-        }
-        public static void loading_screen(ref Task<RestSharp.RestResponse> request)
-        {
-            Console.Clear();
-            Visor.Write("Loading");
-            for (int i = 0; i < 3; i++)
-            {
-                Visor.Write(".");
-                System.Threading.Thread.Sleep(100);
-            }
-            if (!request.IsCompleted)
-                loading_screen(ref request);
-            Console.Clear();
         }
     }
 }

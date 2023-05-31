@@ -6,12 +6,22 @@ using System.Threading.Tasks;
 
 namespace Chatbot_04_4
 {
-    internal class NameReaderIH : CommonInputHandler
+    // Class to read the user's name
+    // The constructor expects:
+    // The question to be asked beforehand
+    // Is invoked similarly to other input handlers, but there is no reply method
+    // This means that the general invocation is just reading the field property
+    internal class NameReaderIH : CommonIH
     {
-        public override string reply(string user_name)
+        // returns the whether or not the word argument is the first word in any sentence within a phrase
+        public bool first_word(string word, List<List<string>> phrase)
         {
-            return $"Hello {user_name}! It's nice to meet you!";
+            foreach (List<string> sentence in phrase)
+                if (word == sentence[0])
+                    return true;
+            return false;
         }
+        // returns whether or not the given string is a valid name
         private bool is_valid_name(string name)
         {
             if (name[0] > 'Z')
@@ -22,11 +32,13 @@ namespace Chatbot_04_4
                 return false;
             return true;
         }
+        // invokes the get_name() method to find the field
         public override string find_field()
         {
             Visor.WriteLine(question);
             return get_name();
         }
+        // looks through user input to find the user's name
         public string get_name()
         {
             List<string> names;
@@ -56,7 +68,7 @@ namespace Chatbot_04_4
             }
             return names[0];
         }
-        public NameReaderIH(List<string> replies, string question) : base(replies, question)
+        public NameReaderIH(string question) : base(question)
         {
             
         }
