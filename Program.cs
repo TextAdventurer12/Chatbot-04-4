@@ -126,6 +126,10 @@ namespace Chatbot_04_4
                     new string[] {"That's quite unique", "It is nice to have a bit of sweetness"},
                     new string[] {"They're a touch too sweet for me"}
                 }, "What's your favourite?")
+            }),
+            new ChainReadersIH(new CommonIH[]
+            {
+                
             })
             };
             // name getter property
