@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chatbot_04_4
 {
+    // witch magic
     // Structure to represent a simple sentence that can be a boolean question
     internal class StringHandler
     {
@@ -43,6 +44,7 @@ namespace Chatbot_04_4
             return str;
         }
         // returns a new string with an escape sequence on grammatical capitals
+        // TODO: make this work
         public void mark_grammatical_caps()
         {
             for (int i = 0; i < str.Length; i++)
