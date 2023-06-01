@@ -52,8 +52,9 @@ namespace Chatbot_04_4
                     new string[] {"I also like bunny ears :)", "They have fluffy tails"},
                     new string[] {"I think they're big and strong", "roar :O"},
                     new string[] {"When I was a kid I worshipped dinosaurs, I always wanted to be a dinosaur. I wanted to be a Tyrannosaurus Rex more than anything in the world. I made my arms short and I roamed the backyard, I chased the neighborhood cats, I growled and I roared. Everybody knew me and was afraid of me.", "The T-Rex is my favourite dinosaur"},
-                    new string[] {"Lizards are cute, they look so warm and comfy on rocks", "They are cool"}
-                }, "Which of these is your favourite?"),
+                    new string[] {"Lizards are cute, they look so warm and comfy on rocks", "They are cool"},
+                    new string[] {"Some animals aren't for everyone"}
+                }, "What's your favourite animal"),
             new ChainReaders(new CommonIH[]
             {
                 new BooleanReaderIH(new string[]
@@ -88,8 +89,9 @@ namespace Chatbot_04_4
                     new string[] {"Isn't that just rugby?", "Are you scared of tackling?"},
                     new string[] {"Table tennis is fun :)", "I like to play sometimes", "I think you could just play normal tennis"},
                     new string[] {"You must be quite fit", "I've never been good at it"},
-                    new string[] {"Are you an old man?", "Quite refined I see", "I've never played myself, but it seems fun"}
-                }, "Which of these is your favourite?")
+                    new string[] {"Are you an old man?", "Quite refined I see", "I've never played myself, but it seems fun"},
+                    new string[] {"Some sports aren't for everyone"}
+                }, "What's your favourite sport?")
             }),
             new ChainReaders(new CommonIH[]
             {
@@ -124,13 +126,35 @@ namespace Chatbot_04_4
                     new string[] {"I love tea", "It's quite nice to have a cup of tea at the end of the day, isn't it"},
                     new string[] {"I like sweet things", "It's lovely with marshmallows"},
                     new string[] {"That's quite unique", "It is nice to have a bit of sweetness"},
-                    new string[] {"They're a touch too sweet for me"}
-                }, "What's your favourite?")
+                    new string[] {"They're a touch too sweet for me"},
+                    new string[] {"Some drinks aren't for everyone"}
+                }, "What's your favourite hot drink?")
             }),
-            new ChainReadersIH(new CommonIH[]
+            new NumberReaderIH("How old are you?", new double[] {5, 12, 18, 30, 60}, new string[][]
             {
-                
-            })
+                new string[] {"You're quite young", "I hope you have parental supervision"},
+                new string[] {"That's cool", "Wow $, You're quite young"},
+                new string[] {"Same as me :)", "High school's a pain"},
+                new string[] {"Quite adult I see", "So you're employed?"},
+                new string[] {"That's quite old"},
+                new string[] {"I hope you're doing well", "People have been living longer recently"}
+            }),
+            new FavouriteReaderIH(new string[]
+            {
+                "Pop",
+                "Rock",
+                "Classical",
+                "Jazz",
+                "Baroque",
+            }, new string[][]
+            {
+                new string[] {"I guess it is popular", "It's not really for me"},
+                new string[] {"I like rock music", "It's my favourite"},
+                new string[] {"That's quite refined", "I enjoy classical sometimes as well"},
+                new string[] {"I especially like smooth jazz", "It can be quite nice to listen to"},
+                new string[] {"That's quite refined", "I enjoy classical sometimes as well"},
+                new string[] {"Some types of music aren't for everyone"}
+            }, "What's your favourite music genre")
             };
             // name getter property
             NameReaderIH namer = new NameReaderIH("What is your name?");
