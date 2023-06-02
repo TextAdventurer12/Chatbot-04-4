@@ -17,13 +17,13 @@ namespace Chatbot_04_4
         // This is a list of all questions that the bot will ask. It can contain any InputHandler, and will call its defined field getter and reply functions
         public List<CommonIH> inputHandlers = new List<CommonIH>();
         // This is a unique Input Handler because the user_name variable must be set, and is dependant specifically on the NameReaderIH
-        public NameReaderIH nameGetter = new NameReaderIH();
+        public NameReaderIH nameGetter;
         // This is the basic constructor, asking for the name getter and all other questions
         public BotInstance(NameReaderIH nameGetter, List<CommonIH> inputHandlers)
         {
             this.inputHandlers = inputHandlers;
+            this.nameGetter = nameGetter;
             id = hash_time(DateTime.Now.ToString());
-            Converse();
         }
         // simple function to get a relatively unique id for the chatbot at every instance
         // This could probably just call r.Next, but there's no real need
@@ -41,12 +41,25 @@ namespace Chatbot_04_4
         // This is the main function of this class, and will just randomly iterate through the question list
         public void Converse()
         {
-            Visor.WriteLine($"Hello! I am ChatBot {id}");
-            user_name = nameGetter.field;
+            BooleanReaderIH isName = new BooleanReaderIH(new string[]
+            {
+                "That's good!"
+            },
+            new string[] { "ERR" }, "");
+            isName.field = "no";
+            ConsoleVisor.Visor.WriteLine($"Hello! I am ChatBot {id}");
+            while (isName.field == "no")
+            {
+                nameGetter.field = null;
+                nameGetter.user_input = null;
+                user_name = nameGetter.field;
+                isName.field = null;
+                Console.WriteLine($"Is your name {user_name}?");
+            }
             while (inputHandlers.Count > 0)
             {
                 int ind = Utils.r.Next(0, inputHandlers.Count);
-                Console.WriteLine(inputHandlers.values[ind].reply(inputHandlers.values[ind].field == "yes", user_name));
+                ConsoleVisor.Visor.WriteLine(inputHandlers[ind].reply(inputHandlers[ind].field == "yes", user_name));
                 inputHandlers.RemoveAt(ind);
             }
         }

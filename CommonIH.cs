@@ -39,9 +39,9 @@ namespace Chatbot_04_4
         // This is a property that is used to access the user's reply, and will set it if the hidden value is null
         public string user_input { get {
             if (_user_input == null)
-                _user_input = Utils.non_nullable(Visor.ReadLine());
+                _user_input = Utils.non_nullable(ConsoleVisor.Visor.ReadLine());
             return _user_input;
-        }  protected set
+        }  set
             {
                 _user_input = value;
             }

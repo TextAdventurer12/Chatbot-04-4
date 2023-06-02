@@ -16,8 +16,10 @@ namespace Chatbot_04_4
     internal class BooleanReaderIH : CommonIH
     {
         // Arrays of keywords to indicate the reply in a sentence
-        private static string[] positives = { "yes", "ye", "yeah", "yep", "yup", "true", "correct", "agree", "like", "love", "aye"};
-        private static string[] negatives = { "no", "nope", "nay", "nah", "false", "incorrect", "disagree", "dislike", "hate", "nay", "despise" };
+        private static string[] positives = { "true", "correct", "agree", "like", "love"};
+        private static string[] f_positive = { "yes", "ye", "yeah", "yep", "yup", "aye" };
+        private static string[] negatives = { "false", "incorrect", "disagree", "dislike", "hate", "despise" };
+        private static string[] f_negative = { "no", "nope", "nay", "nah" };
         private static string[] inverters = { "not", "don't" };
         // holds possible replies of the input handler based on the user's input
         private List<string> neg_replies;
@@ -41,6 +43,12 @@ namespace Chatbot_04_4
             foreach (string s in input_words)
                 if (negatives.Contains(new StringHandler(s).remove_special_chars().ToLower()))
                     return is_inverted() ? true : false;
+            foreach (string s in input_words)
+                if (f_positive.Contains(new StringHandler(s).remove_special_chars().ToLower()))
+                    return true;
+            foreach (string s in input_words)
+                if (f_negative.Contains(new StringHandler(s).remove_special_chars().ToLower()))
+                    return false;
             throw new Exception();
         }
         // selects a reply from the two lists depending on the user's input
@@ -59,10 +67,10 @@ namespace Chatbot_04_4
             return sels[0] + user_name + sels[1];
         }
         // function for filling the input handler's field (refer to CommonIH for field definition)
-        private override string find_field()
+        public override string find_field()
         {
-            Visor.WriteLine(question);
-            user_input = Visor.ReadLine();
+            ConsoleVisor.Visor.WriteLine(question);
+            user_input = ConsoleVisor.Visor.ReadLine();
             string feld;
             try
             {
@@ -72,7 +80,7 @@ namespace Chatbot_04_4
             {
                 if (certainty)
                 {
-                    Visor.WriteLine("Sorry, I'm not sure what you mean, please say that again");
+                    ConsoleVisor.Visor.WriteLine("Sorry, I'm not sure what you mean, please say that again");
                     return find_field();
                 }
                 feld = "?";

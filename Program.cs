@@ -6,7 +6,7 @@ namespace Chatbot_04_4
         static void Main()
         {
             // Set of questions to be asked
-            List<CommonIH> inputHandlers = 
+            List<CommonIH> inputHandlers = new List<CommonIH>()
             {
             new BooleanReaderIH(
                 new string[]
@@ -36,15 +36,15 @@ namespace Chatbot_04_4
                     "Really $? Most people like them",
                     "I get it, some people just don't like some animals",
                     "That's interesting"
-                }, "Then what about dogs?"),
-            new FavouriteReaderIH(new string[]
+                }, "Do you like dogs?"),
+            new FavouriteReaderIH(new string[][]
                 {
-                    "Cats",
-                    "Dogs",
-                    "Rabbits",
-                    "Lions",
-                    "Dinosaurs",
-                    "Lizards"
+                    new string[] {"Cats", "cat" },
+                    new string[] {"Dogs", "dog" },
+                    new string[] {"Rabbits", "rabbit" },
+                    new string[] {"Lions", "lion" },
+                    new string[] {"Dinosaurs", "dinosaur" },
+                    new string[] {"Lizards", "lizard" }
                 }, new string[][]
                 {
                     new string[] {"I like cats too!", "Wow $! Cat's are also my favourite"},
@@ -68,17 +68,17 @@ namespace Chatbot_04_4
                     "You should try them sometime",
                     "I don't like them either"
                 }, "Do you like sport?"),
-                new FavouriteReaderIH(new string[]
+                new FavouriteReaderIH(new string[][]
                 {
-                    "Football",
-                    "Rugby",
-                    "Hockey",
-                    "Chess",
-                    "Futsal",
-                    "Touch",
-                    "Table Tennis",
-                    "Tennis",
-                    "Golf"
+                    new string[] {"Football" },
+                    new string[] {"Rugby" },
+                    new string[] {"Hockey" },
+                    new string[] {"Chess" },
+                    new string[] {"Futsal"},
+                    new string[] {"Touch" },
+                    new string[] {"Table Tennis", "Ping Pong" },
+                    new string[] {"Tennis" },
+                    new string[] {"Golf" }
                 }, new string[][]
                 {
                     new string[] {"I play football too!", "Football is fun!", "I liked the world cup"},
@@ -113,13 +113,13 @@ namespace Chatbot_04_4
                 {
                     "I guess it's not for everyone"
                 }, "How about tea? It's my favourite"),
-                new FavouriteReaderIH(new string[]
+                new FavouriteReaderIH(new string[][]
                 {
-                    "Coffee",
-                    "Tea",
-                    "Hot Chocolate",
-                    "Mocha",
-                    "Frappuccino"
+                    new string[] {"Coffee" },
+                    new string[] {"Tea" },
+                    new string[] {"Chocolate", "Milo" },
+                    new string[] {"Mocha" },
+                    new string[] {"Frappuccino" }
                 }, new string[][]
                 {
                     new string[] {"Coffee's a little too bitter for me", "It can really wake me up in the morning"},
@@ -139,13 +139,12 @@ namespace Chatbot_04_4
                 new string[] {"That's quite old"},
                 new string[] {"I hope you're doing well", "People have been living longer recently"}
             }),
-            new FavouriteReaderIH(new string[]
+            new FavouriteReaderIH(new string[][]
             {
-                "Pop",
-                "Rock",
-                "Classical",
-                "Jazz",
-                "Baroque",
+                new string[] {"pop" },
+                new string[] {"rock" },
+                new string[] {"classical", "baroque", "romantic" },
+                new string[] {"jazz" },
             }, new string[][]
             {
                 new string[] {"I guess it is popular", "It's not really for me"},
@@ -159,7 +158,7 @@ namespace Chatbot_04_4
             // name getter property
             NameReaderIH namer = new NameReaderIH("What is your name?");
             // establish and invoke the chatbot with necessary sets
-            BotInstance bot = new BotInstance(namer, inputHandlers.Values.ToList());
+            BotInstance bot = new BotInstance(namer, inputHandlers);
             bot.Converse();
         }
     }

@@ -30,7 +30,7 @@ namespace Chatbot_04_4
             foreach (char c in str)
             {
                 Console.Write(c);
-                Threading.Thread.Sleep(15);
+                System.Threading.Thread.Sleep(15);
             }
         }
         // Will get some user input after displaying the string qry
@@ -45,7 +45,7 @@ namespace Chatbot_04_4
             Console.ForegroundColor = UsrColor;
             return Utils.non_nullable(Console.ReadLine());
         }
+        // Instance of the Visor class that is to be called directly, no class instances should be made anywhere else
+        public static ConsoleVisor Visor = new ConsoleVisor(ConsoleColor.DarkGray, ConsoleColor.Cyan);
     }
-    // Instance of the Visor class that is to be called directly, no class instances should be made anywhere else
-    public static ConsoleVisor Visor = new ConsoleVisor(ConsoleColor.Red, ConsoleColor.Blue);
 }

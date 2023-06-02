@@ -35,7 +35,7 @@ namespace Chatbot_04_4
         // invokes the get_name() method to find the field
         public override string find_field()
         {
-            Visor.WriteLine(question);
+            ConsoleVisor.Visor.WriteLine(question);
             return get_name();
         }
         // looks through user input to find the user's name
@@ -56,14 +56,14 @@ namespace Chatbot_04_4
             }
             catch
             {
-                Visor.WriteLine("Please start your name with a capital letter");
-                user_input = Visor.ReadLine();
+                ConsoleVisor.Visor.WriteLine("Please start your name with a capital letter");
+                user_input = ConsoleVisor.Visor.ReadLine();
                 return get_name();
             }
             if (names.Count > 1)
             {
-                Visor.WriteLine("Sorry, please don't use too many words that start with capital letters");
-                user_input = Visor.ReadLine();
+                ConsoleVisor.Visor.WriteLine("Sorry, please don't use too many words that start with capital letters");
+                user_input = ConsoleVisor.Visor.ReadLine();
                 return get_name();
             }
             return names[0];

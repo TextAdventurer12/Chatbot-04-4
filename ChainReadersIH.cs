@@ -10,7 +10,7 @@ namespace Chatbot_04_4
     // The constructor takes an array of other Input Handlers, which will be called consecutively
     // This is invoked similiarly to other input handlers
     // This class only exists to allow for multiple questions to be asked in a custom order, while allowing general questions to be asked randomly. I don't believe there is a better way to accomplish that
-    public class ChainReaders : CommonIH
+    internal class ChainReaders : CommonIH
     {
         // List of readers that will be called in order
         List<CommonIH> readers = new List<CommonIH>();
@@ -18,7 +18,7 @@ namespace Chatbot_04_4
         public override string reply(bool was_yes, string user_name)
         {
                 foreach (CommonIH IH in readers)
-                    Visor.WriteLine(IH.reply(IH.field == "yes", user_name));
+                    ConsoleVisor.Visor.WriteLine(IH.reply(IH.field == "yes", user_name));
                 return "";
         }
         // simple constructor based on a list of input handlers
