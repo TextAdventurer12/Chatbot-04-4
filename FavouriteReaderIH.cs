@@ -47,7 +47,7 @@ namespace Chatbot_04_4
             foreach (List<string> s in options)
                 foreach (string str in s)
                     foreach (string b in input_words)
-                        if (b.ToLower() == str)
+                        if (new StringHandler(b.ToLower()).remove_special_chars() == str)
                             return str;
             return "else";
         }

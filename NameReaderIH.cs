@@ -13,14 +13,6 @@ namespace Chatbot_04_4
     // This means that the general invocation is just reading the field property
     internal class NameReaderIH : CommonIH
     {
-        // returns the whether or not the word argument is the first word in any sentence within a phrase
-        public bool first_word(string word, List<List<string>> phrase)
-        {
-            foreach (List<string> sentence in phrase)
-                if (word == sentence[0])
-                    return true;
-            return false;
-        }
         // returns whether or not the given string is a valid name
         private bool is_valid_name(string name)
         {
@@ -45,14 +37,8 @@ namespace Chatbot_04_4
             try
             {
                 names = new StringHandler(user_input).get_capitalised().Where((word) => is_valid_name(word)).ToList();
-                var name_getter = new StringHandler(user_input).split_any(".!?");
-                var encapsulated = new List<List<string>>();
-                foreach (string name in name_getter)
-                    encapsulated.Add(name.Split(' ').ToList());
                 if (names.Count == 0)
                     throw new Exception();
-                if (names.Count > 1)
-                    names = names.Where((word) => !first_word(word, encapsulated)).ToList();
             }
             catch
             {

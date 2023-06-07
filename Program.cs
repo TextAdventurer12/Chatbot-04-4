@@ -47,7 +47,7 @@ namespace Chatbot_04_4
                     new string[] {"Lizards", "lizard" }
                 }, new string[][]
                 {
-                    new string[] {"I like cats too!", "Wow $! Cat's are also my favourite"},
+                    new string[] {"I like cats too!", "Wow $! Cats are also my favourite"},
                     new string[] {"They are man's best friend", "I'm not a fan myself"},
                     new string[] {"I also like bunny ears :)", "They have fluffy tails"},
                     new string[] {"I think they're big and strong", "roar :O"},
