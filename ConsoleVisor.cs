@@ -46,6 +46,6 @@ namespace Chatbot_04_4
             return Utils.non_nullable(Console.ReadLine());
         }
         // Instance of the Visor class that is to be called directly, no class instances should be made anywhere else
-        public static ConsoleVisor Visor = new ConsoleVisor(ConsoleColor.DarkGray, ConsoleColor.Cyan);
+        public static ConsoleVisor Visor = new ConsoleVisor(ConsoleColor.Green, ConsoleColor.Cyan);
     }
 }
